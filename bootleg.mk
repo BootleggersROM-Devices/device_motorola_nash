@@ -1,12 +1,11 @@
-# Inherit some common DU stuff.
+# Inherit some common AOSP stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+$(call inherit-product, vendor/bootleggers/config/common_full_phone.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/nash/nash-vendor.mk)
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
 
 # Device
 $(call inherit-product, device/motorola/nash/device.mk)
@@ -56,7 +55,7 @@ endif
 
 # Device identifiers
 PRODUCT_DEVICE := nash
-PRODUCT_NAME := du_nash
+PRODUCT_NAME := bootleg_nash
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := Moto Z2
 PRODUCT_MANUFACTURER := Motorola
@@ -66,3 +65,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=nash
 
 BUILD_FINGERPRINT := motorola/nash_tmo/nash:8.0.0/OCX27.109-36/43:user/release-keys
+
+DEVICE_MAINTAINERS="Rkschunk"
+
+BOOTLEG_BUILD_TYPE=Shishufied
